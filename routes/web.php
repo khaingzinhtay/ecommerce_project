@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,7 @@ Route::get('/redirect',[HomeController::class, 'redirect']);
 
 // Category CRUD
 Route::resource('categories',CategoryController::class);
+
+
+// Product CRUD
+Route::resource('products',ProductController::class);
