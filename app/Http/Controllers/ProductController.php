@@ -40,11 +40,11 @@ class ProductController extends Controller
             'price' => ['required'],
             'discount_price' => ['required'],
         ]);
+        $product = $request->all();
         if($request->hasFile('image')){
             $imagePath = $request->file('image')->store('images', 'public');
-            $new['image'] = $imagePath;
+            $product['image'] = $imagePath;
         }
-        $product = $request->all();
         Product::create($product);
         return redirect()->route('products.index');
     }
